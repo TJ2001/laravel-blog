@@ -9,3 +9,8 @@ php artisan make:model name --migration
 Generating a CRUD controller:
 
 php artisan make:controller [name]Controller --resource
+
+
+show routes
+
+php artisan route:list
