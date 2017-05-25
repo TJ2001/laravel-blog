@@ -50,7 +50,7 @@ class PostController extends Controller
         // validate the data
         $this->validate($request, array(
           'title' => 'required|max:150',
-          'slug' => 'required|alpha_dash|min:5|max:150',
+          'slug' => 'required|alpha_dash|min:5|max:150|unique:posts,slug',
           'body' => 'required'
         ));
 
