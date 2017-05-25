@@ -102,14 +102,14 @@ class PostController extends Controller
           'title' => 'required|max:150',
           'body' => 'required'
         ));
+
         // Save the data to the database
         $post = Post::find($id);
         $post->title = $request->input('title');
         $post->body = $request->input('body');
-
         $post->save();
-        // set flash data with success message
 
+        // set flash data with success message
         Session::flash('success', 'This post was succsssfully saved.');
 
         // redirect with flash data to posts.show
@@ -124,6 +124,13 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // create variable that references the post with the ID
+        $post = Post::find($id);
+        // delete said post
+        $post->delete();
+        // flash success message
+        Session::flash('success', 'The post was successfully deleted.');
+        // redirect to post index page
+        return redirect()->route('posts.index');
     }
 }

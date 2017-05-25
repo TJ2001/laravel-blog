@@ -14,3 +14,7 @@ php artisan make:controller [name]Controller --resource
 show routes
 
 php artisan route:list
+
+Useful Larvel resources:
+Laravel-Collective
+Laravel Recipes
