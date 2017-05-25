@@ -18,3 +18,6 @@ php artisan route:list
 Useful Larvel resources:
 Laravel-Collective
 Laravel Recipes
+
+
+RoutCollection.php is 404 error
