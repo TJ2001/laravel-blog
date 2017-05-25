@@ -11,12 +11,11 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/posts/create">Post</a></li>
-
-
+        <li class="{{ Request::is('/') ? "active" : "" }}"><a href="/">Home</a></li>
+        <li class="{{ Request::is('about') ? "active" : "" }}"><a href="/about">About</a></li>
+        <li class="{{ Request::is('contact') ? "active" : "" }}"><a href="/contact">Contact</a></li>
+        <li class="{{ Request::is('posts') ? "active" : "" }}"><a href="/posts">Posts</a></li>
+        <li class="{{ Request::is('posts/create') ? "active" : "" }}"><a href="/posts/create">Create</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
