@@ -50,6 +50,7 @@ class PostController extends Controller
         // validate the data
         $this->validate($request, array(
           'title' => 'required|max:150',
+          'slug' => 'required|alpha_dash|min:5|max:150',
           'body' => 'required'
         ));
 
@@ -57,6 +58,7 @@ class PostController extends Controller
         $post = new Post;
 
         $post->title = $request->title;
+        $post->slug = $request->slug;
         $post->body = $request->body;
 
         $post->save();
